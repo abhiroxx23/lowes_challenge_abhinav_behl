@@ -12,5 +12,4 @@ app.use(express.json({
 app.use('/', require('./routes/redirect'))
 app.use('/api', require('./routes/url'))
 
-const PORT = 5000
-app.listen(PORT, console.log(`server started, listening PORT ${PORT}`))
+module.exports = app

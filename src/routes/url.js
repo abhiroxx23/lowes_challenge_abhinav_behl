@@ -15,6 +15,7 @@ router.post('/shorten', async(req,res)=>{
     const {originalUrl} = req.body
     //check base url
     if(!validUrl.isUri(baseUrl)){
+        console.log('here')
         return res.status(401).json('Invalid base URL')
     }
     // create url code
@@ -57,7 +58,6 @@ router.get('/shortenedUrls', async(req, res)=>{
         else{
             return res.status(404).json('No URLs Found')
         }
-
     }
     catch(err){
         console.error(err)
