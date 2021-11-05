@@ -1,6 +1,12 @@
 # Node-URL-Shortener-Service
 A URL shortener service
 
+# Usage
+1. endpoint - POST http://localhost:5000/api/shorten
+2. set content-Type to application/json
+set body param "originalUrl" to desired long url which needs to be converted in JSON format
+3. take the shortUrl generated in response and run it
+
 ## Run using docker
 docker-compose up --build
 
