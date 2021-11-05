@@ -11,6 +11,7 @@ router.get('/:code', async(req, res)=>{
     try{
         const url = await Url.findOne({urlCode: req.params.code})
         if(url){
+            await Url.findOneAndUpdate({urlCode: req.params.code}, {hits: url.hits + 1})
             return res.redirect(url.originalUrl)
         }
         else{

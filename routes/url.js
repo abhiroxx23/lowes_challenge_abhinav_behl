@@ -48,4 +48,21 @@ router.post('/shorten', async(req,res)=>{
     }
 })
 
+router.get('/shortenedUrls', async(req, res)=>{
+    try{
+        const urls = await Url.find({}, {hits: 1, shortUrl: 1})
+        if(urls){
+            return res.json(urls)
+        }
+        else{
+            return res.status(404).json('No URLs Found')
+        }
+
+    }
+    catch(err){
+        console.error(err)
+        res.status(500).json('Server Error')
+    }
+})
+
 module.exports = router

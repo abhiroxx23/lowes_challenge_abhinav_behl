@@ -7,6 +7,8 @@ A URL shortener service
 set body param "originalUrl" to desired long url which needs to be converted in JSON format
 3. take the shortUrl generated in response and run it
 
+endpoint - GET http://localhost:5000/api/shortenedUrls  ->  show all shortened urls with hits count
+
 ## Run using docker
 docker-compose up --build
 
